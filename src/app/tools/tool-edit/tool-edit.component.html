@@ -1,0 +1,15 @@
+<h5>Edit Tool</h5>
+<form #toolForm="ngForm" (ngSubmit)="onSubmit(toolForm)">
+        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="toolEdit.$key">
+        <label>Name
+            <input class="form-control"  required #name="ngModel" [(ngModel)]="toolEdit.name" name = "name" type="text" placeholder="Name *">     
+        </label>
+        <label>Description
+            <input class="form-control" #name="ngModel" [(ngModel)]="toolEdit.description" name = "description" type="text" placeholder="Description *">
+        </label> 
+    <div class="form-group">
+          <button type  = "submit" class="btn btn-default"> <i class="fa fa-floppy-o"></i> Submit</button>
+          <button class = "button" class="btn btn-default" (click)="onDelete(toolForm)"><i class="fa fa-trash-o"></i>Delete</button>
+    </div>
+ 
+  </form>

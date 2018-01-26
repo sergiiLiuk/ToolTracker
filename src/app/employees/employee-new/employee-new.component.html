@@ -1,0 +1,28 @@
+<h5>Add New Employee</h5>
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+  <div class="form-group"> 
+    <label>First Name
+        <input class="form-control"  required #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.first_name" name = "first_name" type="text" placeholder="First Name *">     
+    </label>
+    <label>Last Name
+        <input class="form-control" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.last_name" name = "last_name" type="text" placeholder="Last Name *">
+    </label> 
+    <label>Position
+        <input class="form-control" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" name = "position" type="text" placeholder="Position *">
+    </label>
+    <label>Phone
+        <input class="form-control" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.phone" name = "phone" type="text" placeholder="Phone *">
+    </label> 
+    <label>Email
+        <input class="form-control" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.email" name = "email" type="text" placeholder="Email *">
+    </label> 
+    <label>Password
+        <input class="form-control" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.password" name = "password" type="text" placeholder="Password *">
+    </label> 
+     <div class="form-group">
+       <button type="submit" class="btn btn-default" [disabled]="!employeeForm.valid"> <i class="fa fa-floppy-o"></i> Submit</button>
+       <button type="button" class="btn btn-default" (click)="resetForm()"><i class="fa fa-repeat"></i> Reset</button>
+     </div>
+  </div>
+  </form>
+

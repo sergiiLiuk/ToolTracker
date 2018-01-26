@@ -1,0 +1,11 @@
+<div class="col md 12">
+   <app-menu></app-menu>
+  <div class="col-md-12">
+    <button class = "button" class="btn btn-default"  (click)="addend = !addend"><i class="fa fa-file-text-o"></i> New Tool</button>
+  <app-tool-new *ngIf="addend"></app-tool-new>
+  </div>
+<br>
+  <div class="col-md-12">
+    <app-tool-list></app-tool-list>
+  </div>
+</div>

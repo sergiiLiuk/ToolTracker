@@ -1,0 +1,33 @@
+button, ul.list-group.hover li:hover{
+    cursor: pointer;
+    
+}
+.block { 
+    background-color:#EFEFEF;
+    margin-bottom:10px;
+    padding:10px;
+    border:1px solid #DDD;
+    box-shadow:2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+   border-radius:3px;
+ }
+
+ span{
+     color: rgb(175, 18, 13);
+ }
+ 
+ .block:hover{
+background-color: blanchedalmond;
+ }
+ 
+ #map agm-map {
+    height: 400px;
+  
+} 
+ 
+input[type="radio"] {
+    width: 2%;
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+}
+ 

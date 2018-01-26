@@ -1,0 +1,16 @@
+<ul class="list-group hover">
+    <li class="list-group-item"  *ngFor="let tool of toolList">
+     <div class="block">
+     <div class="row">
+     <div class="col-md-11">
+    <span>Name:</span> {{tool.name}},
+    <span>Description:</span> {{tool.description}}
+     </div>
+     <div class="col-md-1">
+     <button class = "button" class="btn btn-default" (click)="tool.editable = !tool.editable"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+     </div>
+     </div>
+     <app-tool-edit [tool]="tool" *ngIf="tool.editable"></app-tool-edit>
+   </div>
+   </li> 
+  </ul>

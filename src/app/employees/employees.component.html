@@ -1,0 +1,11 @@
+<div class="col-md-12">
+<app-menu></app-menu>
+  <div class="col-md-12">
+      <button class = "button" class="btn btn-default"  (click)="addend = !addend"><i class="fa fa-address-card-o"></i> New Employee</button>
+  <app-employee-new *ngIf="addend"></app-employee-new>
+  </div>
+<br>
+ <div class="col-md-12">
+    <app-employee-list></app-employee-list>
+ </div>
+</div>

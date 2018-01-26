@@ -1,0 +1,56 @@
+<div class="col md 12">
+  <app-menu></app-menu>
+      <h3>Tools Map</h3>
+      <input type="radio" name="rad2" (click)="getAllTasks(true)"> Get All Tasks
+      <br>
+      <input type="radio" name="rad2" (click)="getAllTasks(false)"> Hide Tasks
+      
+       <!--<button type="button" class="btn btn-default" (click)="getAllTasks()">Get All Tasks</button> -->
+       <br>
+       <br>
+      <div id="map" >    
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]='zoom' (mapClick)="onChoseLocation($event)">
+            <agm-marker [latitude]= "lat" [longitude]="lng">
+            <agm-info-window>
+              <p>HOME</p>
+            </agm-info-window>
+        </agm-marker>
+    
+          <agm-marker *ngFor="let task of markerList"
+            [latitude] = "task.lat"
+            [longitude] = "task.lng">
+            <agm-info-window>
+                <h4>Tool: {{task.tool}}</h4>
+                <p>In Use By: {{task.in_use_by}}</p>
+              </agm-info-window>
+          </agm-marker>
+    
+          <div *ngIf="showAll">
+            <agm-marker  *ngFor="let task of taskList"
+            [latitude] = "task.lat"
+            [longitude] = "task.lng">
+            <agm-info-window>
+                <h4>Tool: {{task.tool}}</h4>
+                <p>In Use By: {{task.in_use_by}}</p>
+              </agm-info-window>
+          </agm-marker>
+        </div>
+        </agm-map> 
+      </div>  
+   <br>
+  <ul class="list-group hover">
+      <li class="list-group-item"  *ngFor="let task of taskList" (click)="onTaskClick(task)">
+       <div class="block">
+       <div class="row">
+       <div class="col-md-12">
+          <span>Tool: </span>{{task.tool}},
+          <span>In Use By: </span>{{task.in_use_by}},
+          <span>Task: </span>{{task.task}}
+       </div>
+       </div>
+       </div>
+     </li> 
+  </ul>
+</div>
+
+

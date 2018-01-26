@@ -1,0 +1,16 @@
+<h5>Add New Tool</h5>
+<form #toolForm="ngForm" (ngSubmit)="onSubmit(toolForm)">
+  <div class="form-group"> 
+    <label>Name
+        <input class="form-control"  required #name="ngModel" [(ngModel)]="toolService.selectedTool.name" name = "name" type="text" placeholder="Name *">     
+    </label>
+    <label>Description
+        <input class="form-control" #name="ngModel" [(ngModel)]="toolService.selectedTool.description" name = "description" type="text" placeholder="Description *">
+    </label>    
+     <div class="form-group">
+       <button type="submit" class="btn btn-default" [disabled]="!toolForm.valid"> <i class="fa fa-floppy-o"></i> Submit</button>
+       <button type="button" class="btn btn-default" (click)="resetForm()"><i class="fa fa-repeat"></i> Reset</button>
+     </div>
+  </div>
+  </form>
+
